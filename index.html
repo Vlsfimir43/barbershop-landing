@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BLADE & CO — барбершоп</title>
+<style>
+:root{--bg:#f4efe8;--fg:#1b1a18;--card:#fff;--muted:#6d665c;--accent:#b4452a;--line:#ddd3c4;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141311;--fg:#f1ebe0;--card:#1f1d1a;--muted:#a39a8b;--accent:#e0673f;--line:#332f2a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#141311;--fg:#f1ebe0;--card:#1f1d1a;--muted:#a39a8b;--accent:#e0673f;--line:#332f2a;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:Georgia,'Times New Roman',serif;line-height:1.55}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.logo{font-weight:700;letter-spacing:.2em;font-size:18px}
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:12px 22px;border-radius:4px;text-decoration:none;font-family:system-ui,sans-serif;font-weight:600;letter-spacing:.04em}
+.btn:hover{filter:brightness(1.1)}
+.hero{padding:70px 0 80px;text-align:center}
+.hero h1{font-size:clamp(36px,8vw,68px);margin:0 0 14px;line-height:1.1}
+.hero p{color:var(--muted);max-width:480px;margin:0 auto 28px;font-size:18px}
+section{padding:50px 0;border-top:1px solid var(--line)}
+h2{font-size:30px;margin:0 0 24px}
+.price{display:flex;justify-content:space-between;gap:12px;padding:14px 0;border-bottom:1px dashed var(--line);font-size:18px}
+.price b{color:var(--accent);white-space:nowrap}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.ph{aspect-ratio:1;border-radius:6px;display:flex;align-items:flex-end;padding:12px;color:#fff;font-family:system-ui,sans-serif;font-size:14px}
+.ph:nth-child(1){background:linear-gradient(135deg,#3b2f2a,#b4452a)}
+.ph:nth-child(2){background:linear-gradient(135deg,#1f2a33,#4a6a82)}
+.ph:nth-child(3){background:linear-gradient(135deg,#2c2c2c,#8a7a5a)}
+.ph:nth-child(4){background:linear-gradient(135deg,#33261f,#7a4a2a)}
+.ph:nth-child(5){background:linear-gradient(135deg,#222,#5a5a5a)}
+.ph:nth-child(6){background:linear-gradient(135deg,#2a2f26,#6a7a4a)}
+.map{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}
+@media(max-width:640px){.map{grid-template-columns:1fr}}
+.mapbox{background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.mapbox svg{display:block;width:100%;height:auto}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;padding:20px;z-index:50}.ov.on{display:flex}.modal{background:var(--card);color:var(--fg);border-radius:8px;padding:26px;width:100%;max-width:420px;font-family:system-ui,sans-serif;max-height:100%;overflow:auto}.modal h3{margin:0 0 16px;font-family:Georgia,serif;font-size:24px}.modal label{display:block;font-size:14px;color:var(--muted);margin:12px 0 6px}.modal select,.modal input{width:100%;padding:11px;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--fg);font-size:16px}.modal .row{display:flex;gap:10px;margin-top:20px}.modal .btn{border:0;cursor:pointer;flex:1;font-size:16px}.modal .ghost{background:transparent;color:var(--fg);border:1px solid var(--line)}
+footer{padding:40px 0;text-align:center;color:var(--muted);font-family:system-ui,sans-serif;font-size:14px;border-top:1px solid var(--line)}
+.hero{padding:90px 20px 100px;border-radius:8px;background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url(img/barbershopinterior.jpg) center/cover #2a2622;color:#fff}
+.hero p{color:#e8e0d2}
+.gallery{grid-template-columns:repeat(3,1fr)}
+.gallery .ph:first-child{grid-column:span 2;aspect-ratio:2/1}
+.ph{padding:0;overflow:hidden}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:640px){.gallery{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="logo">BLADE &amp; CO</div><a class="btn book" href="#">Записатися</a></header>
+
+<div class="hero">
+<h1>Стрижка, яка тримає форму</h1>
+<p>Чоловічий барбершоп у центрі міста. Класика, фейд, догляд за бородою.</p>
+<a class="btn book" href="#">Записатися в Telegram</a>
+</div>
+
+<section id="price">
+<h2>Прайс</h2>
+<div class="price"><span>Чоловіча стрижка</span><b>500 грн</b></div>
+<div class="price"><span>Стрижка + борода</span><b>800 грн</b></div>
+<div class="price"><span>Моделювання бороди</span><b>350 грн</b></div>
+<div class="price"><span>Королівське гоління</span><b>450 грн</b></div>
+<div class="price"><span>Дитяча стрижка</span><b>350 грн</b></div>
+</section>
+
+<section id="gallery">
+<h2>Наші роботи</h2>
+<div class="gallery">
+<div class="ph"><img src="img/menhaircutfade.jpg" alt="Чоловічий фейд" loading="lazy"></div>
+<div class="ph"><img src="img/haircutcrop.jpg" alt="Стрижка кроп" loading="lazy"></div>
+<div class="ph"><img src="img/beardtrim.jpg" alt="Моделювання бороди" loading="lazy"></div>
+<div class="ph"><img src="img/beardtrim2.jpg" alt="Догляд за бородою" loading="lazy"></div>
+<div class="ph"><img src="img/barbertools.jpg" alt="Інструменти барбера" loading="lazy"></div>
+</div>
+</section>
+
+<section id="contacts">
+<h2>Де нас знайти</h2>
+<div class="map">
+<div class="mapbox">
+<svg viewBox="0 0 400 280" role="img" aria-label="Схема розташування">
+<rect width="400" height="280" fill="#e8e0d2"/>
+<path d="M0 150H400M130 0V280M280 0V280" stroke="#fff" stroke-width="16"/>
+<path d="M0 60H400M0 220H400" stroke="#fff" stroke-width="8"/>
+<rect x="150" y="165" width="110" height="40" fill="#c9bfae"/>
+<path d="M205 150c-14-22-22-34-22-46a22 22 0 0144 0c0 12-8 24-22 46z" fill="#b4452a"/>
+<circle cx="205" cy="104" r="8" fill="#fff"/>
+</svg>
+</div>
+<div>
+<p><b>вул. Прикладна, 12</b><br>Львів</p>
+<p>Пн–Сб: 10:00–20:00<br>Нд: 11:00–18:00</p>
+<a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Lviv">Відкрити в Google Maps</a>
+</div>
+</div>
+</section>
+<footer>© 2026 BLADE &amp; CO · вигаданий барбершоп для портфоліо</footer>
+<div class="ov" id="ov"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="mt">
+<h3 id="mt">Запис на візит</h3>
+<label for="svc">Послуга</label>
+<select id="svc"><option>Чоловіча стрижка — 500 грн</option><option>Стрижка + борода — 800 грн</option><option>Моделювання бороди — 350 грн</option><option>Королівське гоління — 450 грн</option><option>Дитяча стрижка — 350 грн</option></select>
+<label for="dt">Дата</label>
+<input type="date" id="dt">
+<label for="tm">Час</label>
+<select id="tm"></select>
+<label for="nm">Ім’я</label>
+<input type="text" id="nm" placeholder="Як до вас звертатись?">
+<div class="row"><button class="btn ghost" id="cl" type="button">Скасувати</button><button class="btn" id="go" type="button">Надіслати в Telegram</button></div>
+</div></div>
+</div>
+
+<script>
+// Заміни на свій Telegram-нік і текст повідомлення
+var TG_USER = "m0d1a";
+var ov = document.getElementById("ov");
+var tm = document.getElementById("tm");
+var dt = document.getElementById("dt");
+for (var h = 10; h < 20; h++) {
+  ["00", "30"].forEach(function(m){
+    var o = document.createElement("option");
+    o.textContent = (h < 10 ? "0" : "") + h + ":" + m;
+    tm.appendChild(o);
+  });
+}
+var t = new Date();
+var iso = t.getFullYear() + "-" + String(t.getMonth() + 1).padStart(2, "0") + "-" + String(t.getDate()).padStart(2, "0");
+dt.min = iso; dt.value = iso;
+function openM(e){ e.preventDefault(); ov.classList.add("on"); }
+function closeM(){ ov.classList.remove("on"); }
+document.querySelectorAll(".book").forEach(function(a){ a.addEventListener("click", openM); });
+document.getElementById("cl").addEventListener("click", closeM);
+ov.addEventListener("click", function(e){ if (e.target === ov) closeM(); });
+document.addEventListener("keydown", function(e){ if (e.key === "Escape") closeM(); });
+document.getElementById("go").addEventListener("click", function(){
+  var p = dt.value.split("-");
+  var name = document.getElementById("nm").value.trim();
+  var text = "Привіт! Хочу записатися: " + document.getElementById("svc").value +
+    ". Дата: " + p[2] + "." + p[1] + ", час: " + tm.value + "." + (name ? " Мене звати " + name + "." : "");
+  window.open("https://t.me/" + TG_USER + "?text=" + encodeURIComponent(text), "_blank", "noopener");
+  closeM();
+});
+</script>
+</body>
+</html>
